@@ -1,0 +1,494 @@
+:root {
+  --first-color: #4CBB17;
+  --first-color-second: #6e57e0;
+  --first-color-alt: #32CD32;
+  --first-color-lighter: #c1b6fc;
+  --title-color: #242329;
+  --text-color: #6d6a7c;
+  --text-color-light: #a19fad;
+  --input-color: #f0eefc;
+  --body-color: #fbfbfe;
+  --container-color: #ffffff255;
+  --scroll-bar-color: #e3e2e9;
+  --scroll-thumb-color: #c8c6d2;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-family: "Poppins-Regular";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+input {
+  height: 5rem;
+}
+
+.app-logo {
+  font-family: "Poppins-Bold";
+  color: var(--title-color);
+}
+
+.menu__item {
+  margin-left: 1.5rem;
+  position: relative;
+}
+.menu__item:first-child {
+  margin-left: 0;
+}
+.menu__item::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: var(--first-color-alt);
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+.menu__item:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: -0.7rem;
+}
+
+.menu__link {
+  text-transform: capitalize;
+  color: var(--title-color);
+  transition: 0.4s;
+  font-family: "Poppins-Medium";
+}
+.menu__link:hover {
+  color: var(--first-color);
+}
+
+.nav-menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--body-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 6rem;
+  z-index: 1000;
+}
+.nav-menu .app-logo {
+  display: block;
+  color: var(--title-color);
+  font-family: "Poppins-Bold";
+}
+
+.mobile-menu {
+  position: fixed;
+  bottom: -100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--body-color);
+  transition: 0.4s;
+}
+.mobile-menu .mobile-menu__item-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.nav-menu--open .mobile-menu {
+  bottom: 0;
+}
+
+.mobile-menu__item {
+  margin-bottom: 2rem;
+}
+
+.mobile-menu__link {
+  display: flex;
+  flex-direction: column;
+  color: var(--title-color);
+  transition: 0.4s;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-family: "Poppins-Medium";
+}
+.mobile-menu__link:hover {
+  color: var(--first-color);
+}
+.mobile-menu__link > i {
+  font-size: 2.3rem;
+}
+
+.nav__close {
+  text-align: right;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: auto;
+}
+
+.nav__close-icon {
+  color: var(--title-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav__btn {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav__btn .nav__btn-icon {
+  color: var(--title-color);
+  font-size: 1.8rem;
+}
+
+.main {
+  padding-top: 3rem;
+}
+
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob .home__blob-img {
+  width: 200px;
+}
+
+.home__data .home__title {
+  color: var(--title-color);
+  font-family: "Poppins-Bold";
+  font-size: 3rem;
+  line-height: 1.4;
+}
+.home__data .home__sub-title {
+  color: var(--text-color);
+  font-family: "Poppins-SemiBold";
+  display: inline-block;
+  margin-bottom: 2rem;
+  line-height: 1.8rem;
+}
+.home__data .home__text {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+.home__data .home__btn > i {
+  margin-left: 1rem;
+}
+
+.home__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  animation-name: arrow;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+.home__arrow .home__arrow-icon {
+  font-size: 5rem;
+  color: var(--first-color);
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(2rem);
+  }
+}
+.about {
+  margin: 10rem 0;
+}
+
+.about__content-title {
+  color: var(--title-color);
+  font-family: "Poppins-Bold";
+  font-size: 2rem;
+}
+
+.about__content-text {
+  color: var(--text-color);
+}
+
+.about__info {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.about__info .about__info-title {
+  color: var(--title-color);
+  font-size: 1.8rem;
+  font-family: "Poppins-Bold";
+}
+.about__info .about__info-text {
+  color: var(--text-color);
+}
+
+.about__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.skills {
+  margin-bottom: 10rem;
+}
+
+.skill:nth-of-type(2) .skill__progress-number {
+  width: 70%;
+}
+.skill:nth-of-type(3) .skill__progress-number {
+  width: 20%;
+}
+.skill:nth-of-type(4) .skill__progress-number {
+  width: 60%;
+}
+.skill:nth-of-type(5) .skill__progress-number {
+  width: 70%;
+}
+
+.skill__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skill__info .skill__name {
+  color: var(--title-color);
+  font-family: "Poppins-SemiBold";
+}
+.skill__info .skill__name > i {
+  color: var(--first-color-second);
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.skill__progress {
+  width: 100%;
+  height: 0.6rem;
+  background-color: rgba(192, 182, 252, 0.4862745098);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.skill__progress .skill__progress-number {
+  background-color: var(--first-color);
+  width: 80%;
+  height: 100%;
+}
+.skill__progress .skill__progress-number:nth-of-type(2) {
+  width: 70%;
+}
+
+.services {
+  margin-bottom: 10rem;
+}
+
+.service__item {
+  text-align: center;
+}
+
+.service__icon {
+  color: var(--first-color);
+  font-size: 3rem;
+}
+
+.service__title {
+  font-family: "Poppins-Bold";
+  color: var(--title-color);
+  font-size: 1.7rem;
+}
+
+.service__description {
+  color: var(--text-color);
+}
+
+.portfolio__item {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio__item:hover .portfolio__cover {
+  top: 0;
+}
+.portfolio__item:hover .portfolio__btn {
+  opacity: 1;
+  visibility: visible;
+  top: 60%;
+}
+.portfolio__item:hover .portfolio__name {
+  opacity: 1;
+  visibility: visible;
+  top: 40%;
+}
+.portfolio__item .portfolio__cover {
+  background-color: rgba(128, 128, 128, 0.485);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  transition: 0.4s;
+}
+.portfolio__item .portfolio__name {
+  color: var(--title-color);
+  font-family: "Poppins-SemiBold";
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0 2rem;
+}
+.portfolio__item .portfolio__name {
+  left: 50%;
+  top: 70%;
+}
+.portfolio__item .portfolio__name,
+.portfolio__item .portfolio__btn {
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition-delay: 0.2s;
+}
+
+.portfolio__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s;
+  top: 85%;
+  left: 50%;
+  width: 10rem;
+  height: 5rem;
+}
+.portfolio__btn:hover {
+  background-color: var(--first-color-alt);
+}
+.portfolio__btn:hover i {
+  transform: translateX(0.3rem);
+}
+.portfolio__btn > i {
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+  transition: 0.4s;
+}
+
+.banner {
+  background-color: var(--first-color);
+  margin-top: 10rem;
+  color: var(--body-color);
+  text-align: center;
+  padding: 5rem;
+  border-radius: 2rem;
+}
+.banner .banner__title {
+  font-family: "Poppins-SemiBold";
+  margin-bottom: 2rem;
+}
+.banner .banner__btn {
+  background-color: var(--body-color);
+  color: var(--first-color);
+  margin: 0 auto;
+  font-family: "Poppins-SemiBold";
+}
+.banner .banner__btn > i {
+  margin-left: 1rem;
+}
+
+.contact {
+  margin-top: 10rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+}
+.contact__item > i {
+  color: var(--first-color);
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+.contact__info > p:first-child {
+  color: var(--title-color);
+  font-family: "Poppins-SemiBold";
+}
+.contact__info > p:last-child {
+  color: var(--text-color);
+}
+
+.footer {
+  background-color: var(--first-color);
+  padding: 5rem 0 10rem 0;
+}
+.footer .footer__title {
+  color: var(--body-color);
+  text-align: left;
+}
+.footer .footer__sub-title {
+  color: var(--title-color);
+  text-align: left;
+  font-family: "Poppins-SemiBold";
+}
+.footer .footer__item {
+  width: 10rem;
+  margin-top: 2rem;
+}
+.footer .footer__link {
+  color: var(--body-color);
+}
+.footer .footer__social .footer__social-link {
+  color: var(--body-color);
+  font-size: 2rem;
+}
+.footer .footer__social .footer__social-link:first-child {
+  margin-right: 1rem;
+}/*# sourceMappingURL=app.css.map */

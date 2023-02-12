@@ -1,0 +1,32 @@
+.btn {
+    background-color: var(--first-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    font-size: 1.8rem;
+    color: var(--body-color);
+    padding: 1.3rem 1rem;
+    border-radius: 1rem;
+    font-family: "Poppins-Medium";
+    transition: .4s;
+}
+
+.btn:hover {
+    background-color: var(--first-color-alt);
+    color: var(--body-color);
+}
+
+.app__title {
+    font-family: "Poppins-SemiBold";
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.app__sub-title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.5rem;
+    display: block;
+    font-family: "Poppins-Medium";
+}
