@@ -1,6 +1,6 @@
 # Responsive Personal Website
 
-![viewfinal](https://raw.githubusercontent.com/Amirreza-Rashvand-Developer/Travel/main/preview.jpg)
+![viewfinal](https://raw.githubusercontent.com/Amirreza-Rashvand-Developer/Amirreza-Rashvand/main/preview.jpg)
 
 - [Demo Project](https://amirreza-rashvand-developer.github.io/Travel/)
 
